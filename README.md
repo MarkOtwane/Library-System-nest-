@@ -1,2 +1,5 @@
 # Library System (NestJS)
 This repository is built with NestJS and supports modular architecture.
+
+
+Create a complete NestJS API application for a library management system using in-memory array storage. Your application should have three main modules: Books (library catalog), Authors (book writers), and Members (library patrons). Each module must include proper interfaces, DTOs, services with full CRUD operations, and controllers with REST endpoints (GET, POST, PUT, DELETE). Implement the folder structure we discussed in class with separate directories for DTOs and interfaces, use TypeScript throughout with proper type definitions, and ensure all endpoints work correctly with realistic library data stored in arrays within your services. Test your API using Restclient to verify that you can create books, manage authors, handle member registrations, and retrieve data properly - your final submission should be a working NestJS application that demonstrates understanding of modules, controllers, services, and the MVC pattern we covered in today's session.
