@@ -1,4 +1,4 @@
-export class CreateMemberDto {
+export class UpdateMemberDto {
   name: string;
   email: string;
   memberID: string;

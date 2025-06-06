@@ -1,4 +1,4 @@
-export class CreateBookDto {
+export class UpdateBookDto {
   title: string;
   author: string;
   isbn: string;
