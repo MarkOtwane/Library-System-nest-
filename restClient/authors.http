@@ -1,0 +1,12 @@
+POST http://localhost:3000/authors
+Content-Type: application/json
+
+{
+  "name": "Mark Otwane",
+  "biography": "A poet, a full stack web developer and designer",
+  "dateOfBirth": "2003-10-03T00:00:00.000Z",
+  "booksWritten": [
+    "Overcome laziness",
+    "Another Book"
+  ]
+}

@@ -1,0 +1,11 @@
+POST http://localhost:3000/members
+Content-Type: application/json
+
+{
+"title": "Think and Grow Rich",
+  "book_number": "123r",
+  "author": "Napolean Hill",
+  "isbn": "st123",
+  "genre": "Finance",
+ " publication_Date": "new Date("12-12-2023")"
+}
