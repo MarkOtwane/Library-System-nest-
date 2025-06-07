@@ -1,4 +1,4 @@
-export interface Books {
+export class CreateBooksDto {
   title: string;
   book_number: string;
   author: string;

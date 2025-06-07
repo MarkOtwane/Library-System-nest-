@@ -1,4 +1,4 @@
-export interface Members {
+export class CreateMemberDto {
   name: string;
   email: string;
   memberID: string;

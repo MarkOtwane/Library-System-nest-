@@ -1,4 +1,4 @@
-export interface Books {
+export class UpdateBooksDto {
   title: string;
   book_number: string;
   author: string;

@@ -1,4 +1,4 @@
-export interface Authors {
+export class UpdateAuthorDto {
   name: string;
   biography: string;
   dateOfBirth: Date;
