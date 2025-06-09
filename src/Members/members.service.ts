@@ -42,6 +42,7 @@ export class MembersService {
     }
 
     const newMember: Members = {
+      ...data, //extend this
       name: data.name,
       email: data.email,
       memberID: data.memberID,
@@ -51,12 +52,22 @@ export class MembersService {
     return newMember;
   }
 
+  /**
+   * find all  in the array claaed members
+   * @returns return all members
+   */
+
   findAll(): Members[] {
     return this.members;
   }
 
+  /**
+   *
+   * @param id fetch by id
+   * @returns member whose id was found
+   */
   findOne(id: string): Members {
-    const member = this.members.find((member) => member.memberID === id);
+    const member = this.members.find((memberrs) => memberrs.memberID === id);
     if (!member) {
       throw new ConflictException(`Member with ID ${id} not found`);
     }
@@ -68,21 +79,21 @@ export class MembersService {
     if (!member) {
       throw new ConflictException(`Member with email ${email} not found`);
     }
-    return member;
+    return member; // return the member whose id was found
   }
 
-  update(memberID: string, data: UpdateMemberDto): Members {
+  update(email: string, data: UpdateMemberDto): Members {
     const memberIndex = this.members.findIndex(
-      (member) => member.memberID === memberID,
+      (member) => member.email === email,
     );
 
     if (memberIndex === -1) {
-      throw new NotFoundException(`Member with id ${memberID} not found`);
+      throw new NotFoundException(`Member with email ${email} not found`);
     }
 
     if (data.email) {
       const existingMember = this.members.find(
-        (member) => member.email === data.email && member.memberID !== memberID,
+        (member) => member.email === data.email && member.email !== email,
       );
 
       if (existingMember) {
@@ -107,7 +118,7 @@ export class MembersService {
     }
 
     return {
-      message: `Member ${this.members[memberIndex].name} checked out successfully`,
+      message: `Member ${this.members[memberIndex].name} removed out successfully`,
     };
   }
 
