@@ -2,5 +2,11 @@ export interface Authors {
   name: string;
   biography: string;
   dateOfBirth: Date;
-  booksWritten: string[];
+  booksWritten: {
+    title: string;
+    book_number: string;
+    isbn: string;
+    genre: string;
+    publication_Date: Date;
+  };
 }

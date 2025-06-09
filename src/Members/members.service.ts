@@ -41,6 +41,7 @@ export class MembersService {
       );
     }
 
+    //create new member
     const newMember: Members = {
       ...data, //extend this
       name: data.name,
@@ -48,6 +49,8 @@ export class MembersService {
       memberID: data.memberID,
       phone: data.phone,
     };
+
+    //push the member to the array
     this.members.push(newMember);
     return newMember;
   }
@@ -102,7 +105,7 @@ export class MembersService {
     }
 
     this.members[memberIndex] = {
-      ...this.members[memberIndex],
+      ...this.members[memberIndex], //what is happening here
       ...data,
     };
 

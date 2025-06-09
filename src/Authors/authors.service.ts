@@ -14,7 +14,37 @@ export class AuthorsService {
       name: 'Mark Otwane',
       biography: 'A poet a full stack web developer and designer',
       dateOfBirth: new Date('2003-10-03'),
-      booksWritten: [],
+      booksWritten: {
+        title: '7 japanese ways to overcome laziness',
+        book_number: '1234RE',
+        isbn: '123-456-789',
+        genre: 'Development',
+        publication_Date: new Date('3-10-2023'),
+      },
+    },
+    {
+      name: 'Mark Otwane',
+      biography: 'A poet a full stack web developer and designer',
+      dateOfBirth: new Date('2006-10-03'),
+      booksWritten: {
+        title: '7 japanese ways to overcome laziness',
+        book_number: '1234RE',
+        isbn: '123-456-789',
+        genre: 'Development',
+        publication_Date: new Date('3-10-2023'),
+      },
+    },
+    {
+      name: 'JOHN DOE',
+      biography: 'A full stack web developer and designer',
+      dateOfBirth: new Date('2006-9-03'),
+      booksWritten: {
+        title: 'japanese ways to overcome laziness',
+        book_number: '12K34RE',
+        isbn: '127-456-789',
+        genre: 'Development',
+        publication_Date: new Date('3-10-2026'),
+      },
     },
   ];
 
@@ -87,21 +117,21 @@ export class AuthorsService {
     return this.authors[authorIndex];
   }
 
-  remove(name: string): { message: string } {
-    const authorIndex = this.authors.findIndex(
-      (author) => author.name === name,
-    );
+  // remove(name: string): { message: string } {
+  //   const authorIndex = this.authors.findIndex(
+  //     (author) => author.name === name,
+  //   );
 
-    if (authorIndex === -1) {
-      throw new NotFoundException(`Author ${name} not found`);
-    }
+  //   if (authorIndex === -1) {
+  //     throw new NotFoundException(`Author ${name} not found`);
+  //   }
 
-    this.authors.splice(authorIndex, 1); // Actually removes it
+  //   this.authors.splice(authorIndex, 1); // Actually removes it
 
-    return {
-      message: `Author ${name} deleted successfully`,
-    };
-  }
+  //   return {
+  //     message: `Author ${name} deleted successfully`,
+  //   };
+  // }
 
   delete(name: string): { message: string } {
     const authorIndex = this.authors.findIndex(

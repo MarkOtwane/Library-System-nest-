@@ -3,6 +3,4 @@ export class UpdateMemberDto {
   email: string;
   memberID: string;
   phone: string;
-  checkInDate: any;
-  checkOutDate: any;
 }

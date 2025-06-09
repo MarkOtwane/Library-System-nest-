@@ -19,20 +19,20 @@ export class BooksService {
       publication_Date: new Date('12-12-2008'),
     },
     {
-      title: 'Think and Grow Rich',
-      book_number: 'TGR123',
-      author: 'Napolean Hill',
-      isbn: 'R1234',
+      title: 'The psychology of money',
+      book_number: 'TWRGR123',
+      author: 'Earl Joe',
+      isbn: 'R$%1234',
       genre: 'Finance',
-      publication_Date: new Date('12-12-2008'),
+      publication_Date: new Date('12-12-2024'),
     },
     {
-      title: 'Think and Grow Rich',
-      book_number: 'TGR123',
-      author: 'Napolean Hill',
-      isbn: 'R1234',
+      title: 'Rich Dad poor dad',
+      book_number: 'TZGR123',
+      author: 'Bush Baby',
+      isbn: 'RBB1234',
       genre: 'Finance',
-      publication_Date: new Date('12-12-2008'),
+      publication_Date: new Date('12-12-2012'),
     },
   ];
 
@@ -112,18 +112,18 @@ export class BooksService {
     return this.books[bookIndex];
   }
 
-  remove(book_number: string): { message: string } {
-    const bookIndex = this.books.findIndex(
-      (book) => book.book_number === book_number,
-    );
-    if (bookIndex === -1) {
-      throw new NotFoundException(`book with id ${book_number} not found`);
-    }
+  // remove(book_number: string): { message: string } {
+  //   const bookIndex = this.books.findIndex(
+  //     (book) => book.book_number === book_number,
+  //   );
+  //   if (bookIndex === -1) {
+  //     throw new NotFoundException(`book with id ${book_number} not found`);
+  //   }
 
-    return {
-      message: `book ${this.books[bookIndex].title} checked out successfully`,
-    };
-  }
+  //   return {
+  //     message: `book ${this.books[bookIndex].title} checked out successfully`,
+  //   };
+  // }
 
   delete(book_number: string): { message: string } {
     const bookIndex = this.books.findIndex(
