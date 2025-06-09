@@ -43,7 +43,6 @@ export class MembersService {
 
     //create new member
     const newMember: Members = {
-      ...data, //extend this
       name: data.name,
       email: data.email,
       memberID: data.memberID,
@@ -112,18 +111,18 @@ export class MembersService {
     return this.members[memberIndex];
   }
 
-  remove(memberID: string): { message: string } {
-    const memberIndex = this.members.findIndex(
-      (member) => member.memberID === memberID,
-    );
-    if (memberIndex === -1) {
-      throw new NotFoundException(`Member with id ${memberID} not found`);
-    }
+  // remove(memberID: string): { message: string } {
+  //   const memberIndex = this.members.findIndex(
+  //     (member) => member.memberID === memberID,
+  //   );
+  //   if (memberIndex === -1) {
+  //     throw new NotFoundException(`Member with id ${memberID} not found`);
+  //   }
 
-    return {
-      message: `Member ${this.members[memberIndex].name} removed out successfully`,
-    };
-  }
+  //   return {
+  //     message: `Member ${this.members[memberIndex].name} removed out successfully`,
+  //   };
+  // }
 
   delete(memberID: string): { message: string } {
     const memberIndex = this.members.findIndex(

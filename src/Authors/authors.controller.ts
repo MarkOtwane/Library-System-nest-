@@ -29,13 +29,13 @@ export class AuthorsController {
   }
 
   // Get a single author by name
-  @Get(':name')
+  @Get('name:name')
   findOne(@Param('name') name: string): Authors {
     return this.authorsService.findOne(name);
   }
 
   // Update an author by name
-  @Put(':name')
+  @Put('name:name')
   update(
     @Param('name') name: string,
     @Body() updateAuthorDto: UpdateAuthorDto,
@@ -44,10 +44,10 @@ export class AuthorsController {
   }
 
   // Delete an author (soft delete / remove)
-  @Delete('remove/:name')
-  remove(@Param('name') name: string): { message: string } {
-    return this.authorsService.remove(name);
-  }
+  // @Delete('remove/:name')
+  // remove(@Param('name') name: string): { message: string } {
+  //   return this.authorsService.remove(name);
+  // }
 
   // Delete an author permanently
   @Delete('delete/:name')
